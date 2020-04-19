@@ -1,0 +1,62 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.profile{
+    width: 500px;
+    border: 1px solid #cecece;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+   /*border: 0.25rem;*/
+}
+
+
+
+.profile_photo{
+    border-radius: 100%;
+    width: 90px;
+    height: 90px;;
+}
+
+.followers-info{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: left;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.profile_bio{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.list-stories{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.2rem;
+    margin: 1rem 0;
+}
+
+.storie{
+    text-align: center;
+}
+
+.storie_photo{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}
