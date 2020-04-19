@@ -1,31 +1,30 @@
 <template>
-  <main>
-    <Caratula v-bind:username="getUsername('YesidCardenas')"> </Caratula>
-    <Caratula  username="yesidcardenas"> </Caratula>
+  <main>    
+    <div class="profile">
+      <list-stories :stories="storie"></list-stories>
+    </div>
+   
   </main>
 </template>
 
 <script>
 // @ is an alias to /src
-import Caratula from '@/components/Profile'
-
-
-
+//import Caratula from '@/components/Profile'
+import ListStories from "../components/listStories";
 
 export default {
   
   components: {
-    Caratula
+    ListStories
   },
   data(){
     return{
-      username: 'yesid.cardenas'
-    }
-  },
-  methods: {
-    getUsername(value){
-      this.username = value;
-      return this.username;
+      storie:[
+        {img: 'https://github.githubassets.com/images/modules/site/logos/spotify-logo.png',
+        title: 'historia1'},
+        {img: 'https://github.githubassets.com/images/modules/site/logos/spotify-logo.png',
+        title: 'historia2'},
+      ]
     }
   }
 }
