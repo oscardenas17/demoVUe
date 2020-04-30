@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+//Componentes views
 import Home from '../views/Home.vue'
+import Works from '../views/Works.vue'
 
 Vue.use(VueRouter)
 
@@ -9,6 +12,11 @@ Vue.use(VueRouter)
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/works',
+    name: 'Works',
+    component: Works
   },
   {
     path: '/about',

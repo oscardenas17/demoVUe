@@ -1,66 +1,69 @@
 <template>
-  <main>    
-    <profile></profile>
+  <main>
 
-     <div class="container">
-       <h4>Registrate en YesidGram</h4>
-       <br>
 
-      <div class="form-register">
-        <input v-model="form.username" type="text" placeholder="username">
-       <label >
-            <input v-model="form.password" :type="typeShow" placeholder="password"> 
-            <button  class="visible" @click="showPassword()" >Show
-            </button>
+    <h1>hello home</h1>
+    <banner name="Yesid Cárdenas" role=" Frontend Developer & UI developer" bio="Bucaramanga- Colombia"></banner>
 
-       </label>
-       
-       
-        <label >
-          <input v-model="form.isAcept" type="checkbox">Acepto terminos y condiciones
-         
-        </label>
+    <skills :skills="mySkills">    </skills>
+    <contact-form> </contact-form>
 
-        <button @click="sendToRegister()" >
-          Registrate
-        </button>
-
-        <span class="text-danger" v-if="!form.isAcept"> acepta terminos</span>
-        <span v-else>
-          gracias por registrarse
-        </span>
-      </div>
-     </div>
-
-     
   </main>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import Profile from "../components/Profile";
+//import Profile from "../components/Profile";
+import Banner from "../components/Banner";
+import Skills from "../components/Skills";
+import ContactForm from "../components/ContactForm";
 
 export default {
-  components:{
-    Profile
+  components: {
+   // Profile,
+    Banner,
+    Skills,
+    ContactForm
   },
-  data(){
-    return{
-      form:{
-        username:null,
+  data() {
+    return {
+      form: {
+        username: null,
         password: null,
         isAcept: null
       },
       typeShow: "password",
-    }
+      mySkills: [
+        {
+        name: " VuejJS",
+        percetage:"50%",
+        description:"Uso VuejS para el dia a dia"
+        },
+         {
+        name: "SCSS",
+        percetage:"80%",
+        description:"Arquitectura CSS mediante preprocesadores"
+        },
+         {
+        name: "HTML5",
+        percetage:"80%",
+        description:"Maqutado web enfocado el SEO"
+        },
+         {
+        name: "Adobe XD",
+        percetage:"50%",
+        description:"Diseño y prototipos de websites"
+        }
+      ]
+    };
   },
   methods: {
-    sendToRegister(){
+    sendToRegister() {
       console.log(this.form);
     },
-    showPassword(){
-      this.typeShow = (this.typeShow === "password") ? "text": "password";
+    showPassword() {
+      this.typeShow = this.typeShow === "password" ? "text" : "password";
     }
   }
 };
@@ -69,40 +72,39 @@ export default {
 
 
 <style lang="scss" >
-.container{
+.container {
   width: 500px;
   margin: 3rem auto;
 }
 
-.form-register{
+.form-register {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  input{
-    padding: .25rem .75rem;
+  input {
+    padding: 0.25rem 0.75rem;
     border: 1px solid #cecece;
   }
 
-  button{
+  button {
     background-color: cadetblue;
     color: black;
-    padding: 1.25rem .75rem;
+    padding: 1.25rem 0.75rem;
     border: 1px solid #cecece;
-    border-radius: .25rem;
-
+    border-radius: 0.25rem;
   }
 
-  .text-danger{
+  .text-danger {
     color: red;
-    font-size: .8 rem;
+    font-size: 0.8 rem;
     font-style: italic;
   }
 
-  .visible{
+  .visible {
     background-color: cornsilk;
     color: black;
-     padding: .25rem .75rem;
-     margin: 0 1rem ;
+    padding: 0.25rem 0.75rem;
+    margin: 0 1rem;
   }
 }
 </style>
